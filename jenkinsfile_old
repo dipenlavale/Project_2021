@@ -1,0 +1,32 @@
+pipeline {
+  agent any
+        options {
+            disableConcurrentBuilds()
+            
+        }
+        environment {
+                region = 'eu-west-1'
+        }
+    stages {
+        stage("Build static site") {
+            steps {
+                            sh "npm install"
+                            sh "npm run build"
+            }
+        }
+        stage("Deploy to S3") {
+                steps {
+		    script {
+                    	def values = "${params.ReleaseBranch}".split('/')
+                    	releasever = "v1.2.0"
+		    }
+			sh "aws s3 sync dist/ s3://static.iris.informa.com/widgets/${releasever}"
+                }
+        }
+        stage("clear Cache") {
+                 steps {
+			sh "aws cloudfront create-invalidation --distribution-id E3F7HKCX6HTD49 --paths \"/widgets/*\""
+                 }
+         }
+   }
+}

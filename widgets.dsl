@@ -1,4 +1,4 @@
-  pipelineJob("Iris-Widgets/iris-widgets") {
+  pipelineJob("Widgets_test") {
 	description()
 	keepDependencies(false)
 	
@@ -7,7 +7,7 @@
 			scm {
 				git {
 					remote {
-						url("git@bitbucket.org:informa-ge/iris-widgets.git")
+						url("git@github.com:dipenlavale/Project_2021.git")
                         credentials('bitbucket-ssh')
 					}
                   branch('${ReleaseBranch}')
@@ -19,7 +19,7 @@
     parameters {
       gitParam("ReleaseBranch") {
         description('Release tag or branch')
-        defaultValue('master')
+        defaultValue('main')
         type('BRANCH_TAG')
 	  }
     }
