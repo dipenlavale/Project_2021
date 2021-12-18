@@ -1,4 +1,5 @@
 pipeline {
+    agent any
         environment {
                 region = 'eu-west-1'
         }
