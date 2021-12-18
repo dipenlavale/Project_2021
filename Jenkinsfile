@@ -10,7 +10,7 @@ pipeline {
         }
         stage("Deploy to S3") {
                 steps {
-                        Deploye S3 Bucket
+                       echo "Deploye S3 Bucket" 
 		    }
 			echo "S3 bucket created"
                 }
