@@ -7,8 +7,7 @@
 			scm {
 				git {
 					remote {
-						url("git@github.com:dipenlavale/Project_2021.git"
-						credentials('')
+						url("git@github.com:dipenlavale/Project_2021.git")
 					}
                   branch('${ReleaseBranch}')
 				}
