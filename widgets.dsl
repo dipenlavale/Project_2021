@@ -8,6 +8,7 @@
 				git {
 					remote {
 						url("git@github.com:dipenlavale/Project_2021.git")
+						credentials('none')
 					}
                   branch('${ReleaseBranch}')
 				}
