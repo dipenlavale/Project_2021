@@ -1,4 +1,4 @@
-  pipelineJob("Widgets_test") {
+  pipelineJob("Widgets_test1") {
 	description()
 	keepDependencies(false)
 	
